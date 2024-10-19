@@ -11,9 +11,8 @@ namespace ClientDelivery.Models
     {
         public static ObservableCollection<Order> _DatabaseOrder = new ObservableCollection<Order>()
         {
-           
-
-            new Order() {
+            new Order() 
+            {
                 Id = 1,
                 ClientFIO = "Аржанов Андрей",
                 ContainerType = Order.ContainerTypeEnum.Скоропортящиеся,
@@ -21,7 +20,8 @@ namespace ClientDelivery.Models
                 TimeToPickUpOrder = new DateTime (2024, 10,20, 12,30,00),
                 PlaceToDeliveryOrder = "г. Москва, ул. Лескова, д. 30, кв. 11 ",
                 statusOrder = Order.StatusOrderEnum.Новая
-            }, new Order()
+            }, 
+            new Order()
             {
                 Id = 2,
                 ClientFIO = "Аржанова Анна",
