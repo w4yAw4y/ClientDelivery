@@ -11,6 +11,8 @@ namespace ClientDelivery.Models
     {
         public static ObservableCollection<Order> _DatabaseOrder = new ObservableCollection<Order>()
         {
+           
+
             new Order() {
                 Id = 1,
                 ClientFIO = "Аржанов Андрей",
