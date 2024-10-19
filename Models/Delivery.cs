@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClientDelivery.Models
 {
-    public class Delivery
+    public class Order
     {
         public enum ContainerTypeEnum
         {
