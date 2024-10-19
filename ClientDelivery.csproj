@@ -63,9 +63,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Delivery.cs" />
-    <Compile Include="Views\MainDelivery.xaml.cs">
-      <DependentUpon>MainDelivery.xaml</DependentUpon>
+	  <Compile Include="Models\Order.cs" />
+	  <Compile Include="Models\OrderManager.cs" />
+	  <Compile Include="Views\MainDelivery.xaml.cs">
+		  <DependentUpon>MainDelivery.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

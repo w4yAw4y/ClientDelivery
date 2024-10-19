@@ -32,7 +32,7 @@
             Добавить заявку
         </Button>
         <Grid Background="Wheat" Grid.Row="1" Margin="0,70,100,0">
-            <ListView x:Name="deliveryListView"
+            <ListView x:Name="orderListView"
                       BorderBrush="Gray"
                       Margin="5,5,5,5"
                       Padding="0"
