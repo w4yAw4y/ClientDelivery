@@ -55,7 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\MainDelivery.xaml">
+    <Page Include="Views\AddOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainOrder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +67,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-	  <Compile Include="Models\Order.cs" />
-	  <Compile Include="Models\OrderManager.cs" />
-	  <Compile Include="Views\MainDelivery.xaml.cs">
-		  <DependentUpon>MainDelivery.xaml</DependentUpon>
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderManager.cs" />
+    <Compile Include="Views\AddOrder.xaml.cs">
+      <DependentUpon>AddOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainOrder.xaml.cs">
+      <DependentUpon>MainOrder.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

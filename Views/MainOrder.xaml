@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClientDelivery"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1200">
-    <Grid x:Name="MainMenu" Background="Black" >
+    <Grid x:Name="MainMenu" Background="White" >
         <TextBox 
             Name="searchTextBox" 
             Height="30" Width="300" 
