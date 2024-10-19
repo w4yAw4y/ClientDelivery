@@ -45,6 +45,5 @@ namespace ClientDelivery.Models
         {
             _DatabaseOrder.Remove(order);
         }
-
     }
 }
