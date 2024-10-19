@@ -23,6 +23,7 @@ namespace ClientDelivery
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine("Hello!");
         }
     }
 }
