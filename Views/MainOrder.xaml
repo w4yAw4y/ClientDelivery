@@ -4,18 +4,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClientDelivery.Models"
+        xmlns:local="clr-namespace:ClientDelivery"
         mc:Ignorable="d"
         
         Title="MainWindow" Height="700" Width="1200">
-    <Window.Resources>
-        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
-                            ObjectType="{x:Type sys:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </Window.Resources>
     <Grid x:Name="MainMenu" Background="White" Loaded="MainMenu_Loaded" >
         <TextBox 
             Name="searchTextBox" 
@@ -46,15 +38,17 @@
                       Margin="5,70,25,5"
                       Padding="0" FontSize="16"
                       AutoGenerateColumns="False"
-                      >
+            
+                  >
+
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Path = ClientFIO}" x:Name="_clientFIO" Header="ФИО Клиента"/>
-                <DataGridComboBoxColumn  x:Name="_containerType" Header="Тип контейнера"/>
+                <DataGridComboBoxColumn SelectedValueBinding ="{Binding Path=ContainerType}" x:Name="_containerType" Header="Тип контейнера"/>
                 <DataGridTextColumn Binding="{Binding Path= PlaceToPickUpOrder}" x:Name="_placeToPickUpOrder" Header="Откуда забрать"/>
                 <DataGridTextColumn Binding="{Binding Path= TimeToPickUpOrder}" x:Name="_timeToPickUp" Header="Во сколько забрать груз"/>
                 <DataGridTextColumn Binding="{Binding Path= PlaceToDeliveryOrder}" x:Name="_placeToDeliveryOrder" Header="Куда доставить"/>
-                <DataGridComboBoxColumn x:Name="_statusOrder" Header="Статус"/>
+                <DataGridComboBoxColumn SelectedValueBinding ="{Binding Path=StatusOrder}"  x:Name="_statusOrder" Header="Статус"/>
             </DataGrid.Columns>
         </DataGrid>
 

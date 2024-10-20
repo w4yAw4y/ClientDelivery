@@ -19,7 +19,7 @@ namespace ClientDelivery.Models
         //        PlaceToPickUpOrder = "г. Москва, ул. Добролюбова, д.1, стр. 1",
         //        TimeToPickUpOrder = new DateTime (2024, 10,20, 12,30,00),
         //        PlaceToDeliveryOrder = "г. Москва, ул. Лескова, д. 30, кв. 11 ",
-        //        statusOrder = Order.StatusOrderEnum.New
+        //        StatusOrder = Order.StatusOrderEnum.New
         //    }, 
         //    new Order()
         //    {
@@ -29,7 +29,7 @@ namespace ClientDelivery.Models
         //        PlaceToPickUpOrder = "г. Москва, ул. Добролюбова, д.2, стр. 1",
         //        TimeToPickUpOrder = new DateTime (2024, 10,10, 10,10,00),
         //        PlaceToDeliveryOrder = "г. Москва, ул. Лескова, д. 30, кв. 12 ",
-        //        statusOrder = Order.StatusOrderEnum.Done
+        //        StatusOrder = Order.StatusOrderEnum.Done
         //    }
         //};
 

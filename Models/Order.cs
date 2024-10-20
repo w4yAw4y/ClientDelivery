@@ -105,7 +105,7 @@ namespace ClientDelivery.Models
             get;
             set;
         }
-        public StatusOrderEnum statusOrder { 
+        public StatusOrderEnum StatusOrder { 
             get;
             set;
         }
