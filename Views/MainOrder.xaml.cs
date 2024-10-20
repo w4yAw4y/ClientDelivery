@@ -74,37 +74,6 @@ namespace ClientDelivery
                     this.Close();
                 }
             }
-
-            //switch (e.ListChangedType)
-            //{
-            //    case ListChangedType.Reset:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.ItemAdded:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.ItemDeleted:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.ItemMoved:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.ItemChanged:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.PropertyDescriptorAdded:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.PropertyDescriptorDeleted:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    case ListChangedType.PropertyDescriptorChanged:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //    default:
-            //        _fileIOService.SaveData(sender);
-            //        break;
-            //}
         }
 
         private void addDeliveryButton_Click(object sender, RoutedEventArgs e)
