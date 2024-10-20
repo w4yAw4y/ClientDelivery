@@ -23,14 +23,14 @@
         <Label x:Name="PlaceToDeliveryOrderLabel" Content="Адрес доставки груза:" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Width="211" 
                BorderBrush="Black" BorderThickness="0.5" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" />
         <TextBox x:Name="FIOTextBox" HorizontalAlignment="Left" Margin="240,33,0,0" TextWrapping="Wrap" Text="TextBox" 
-                 VerticalAlignment="Top" Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
+                 VerticalAlignment="Top" Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18"/>
         <TextBox x:Name="PlacetoPickUpOrderTextBox" HorizontalAlignment="Left" Margin="240,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" 
-                 Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
+                 Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18"/>
         <ComboBox x:Name="ContainerTypeComboBox" HorizontalAlignment="Left" Margin="240,74,0,0" VerticalAlignment="Top" 
-                  Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
-        <xctk:DateTimePicker  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="240,197,0,0" Height="79" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="15"/>
+                  Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18"/>
+        <xctk:DateTimePicker  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="240,197,0,0" Height="79" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="18"/>
         <TextBox x:Name="PlacetoDeliveryOrderTextBox" HorizontalAlignment="Left" Margin="240,156,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" 
-                 Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
+                 Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18"/>
 
     </Grid>
 </Window>

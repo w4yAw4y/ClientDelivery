@@ -19,9 +19,9 @@ namespace ClientDelivery.Views
     /// </summary>
     public partial class AddOrder : Window
     {
-        ////public AddOrder()
-        //{
-        //    InitializeComponent();
-        //}
+        public AddOrder()
+        {
+            InitializeComponent();
+        }
     }
 }

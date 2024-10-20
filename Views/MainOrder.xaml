@@ -29,7 +29,7 @@
             Margin="10,25"
             VerticalAlignment="Top"
             HorizontalAlignment="Right" 
-            FontSize="16"            
+            FontSize="16" Click="addDeliveryButton_Click"            
             >
             Добавить заявку
         </Button>
@@ -42,7 +42,7 @@
                   >
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly= "{Binding Path=isReadOnly}"/>
+                <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly="{Binding Path=isReadOnly}" />
                 <DataGridTextColumn Binding="{Binding Path = ClientFIO}" x:Name="_clientFIO" Header="ФИО Клиента"/>
                 <DataGridComboBoxColumn SelectedValueBinding ="{Binding Path=ContainerType}" x:Name="_containerType" Header="Тип контейнера"/>
                 <DataGridTextColumn Binding="{Binding Path= PlaceToPickUpOrder}" x:Name="_placeToPickUpOrder" Header="Откуда забрать"/>

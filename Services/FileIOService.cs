@@ -44,6 +44,5 @@ namespace ClientDelivery.Services
                 writer.Write(output);
             }
         }
-
     }
 }

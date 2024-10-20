@@ -1,5 +1,6 @@
 ﻿using ClientDelivery.Models;
 using ClientDelivery.Services;
+using ClientDelivery.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,14 +33,13 @@ namespace ClientDelivery
 
         public MainWindow()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void MainMenu_Loaded(object sender, RoutedEventArgs e) 
         {
             _fileIOService = new FileIOService(PATH);
-            
+
             orderDataGrid.ItemsSource = _orderDataList;
             try
             {
@@ -50,30 +50,6 @@ namespace ClientDelivery
                 MessageBox.Show(ex.Message);
                 this.Close();
             }
-            _orderDataList = new BindingList<Order>()
-            {
-                new Order()
-                {
-                    Id = 0,
-                    ClientFIO = "Аржанов Андрей",
-                    ContainerType = Order.ContainerTypeEnum.Навалочные,
-                    PlaceToPickUpOrder = "г. Москва, ул. Добролюбова, д.1, стр. 1",
-                    TimeToPickUpOrder = new DateTime(2024, 10, 20, 12, 30, 00),
-                    PlaceToDeliveryOrder = "г. Москва, ул. Лескова, д. 30, кв. 11 ",
-                    StatusOrder = Order.StatusOrderEnum.New
-                },
-                new Order()
-                {
-                    Id = 1,
-                    ClientFIO = "Аржанова Анна",
-                    ContainerType = Order.ContainerTypeEnum.Опасные,
-                    PlaceToPickUpOrder = "г. Москва, ул. Добролюбова, д.2, стр. 1",
-                    TimeToPickUpOrder = new DateTime(2024, 10, 10, 10, 10, 00),
-                    PlaceToDeliveryOrder = "г. Москва, ул. Лескова, д. 30, кв. 12 ",
-                    StatusOrder = Order.StatusOrderEnum.Done
-                }
-            };
-
             _statusOrder.ItemsSource = Enum.GetValues(typeof(Order.StatusOrderEnum));
             _containerType.ItemsSource = Enum.GetValues(typeof(Order.ContainerTypeEnum));
 
@@ -84,13 +60,18 @@ namespace ClientDelivery
         {
             if (e.ListChangedType == ListChangedType.ItemChanged || e.ListChangedType == ListChangedType.ItemAdded || e.ListChangedType == ListChangedType.ItemDeleted)
             {
-                try {_fileIOService.SaveData(sender); }  
-                catch(Exception ex) 
+                try { _fileIOService.SaveData(sender); }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     this.Close();
                 }
             }
+        }
+
+        private void addDeliveryButton_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
         
