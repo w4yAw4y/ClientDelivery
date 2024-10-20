@@ -10,56 +10,9 @@ namespace ClientDelivery.Models
 {
     public class Order : INotifyPropertyChanged
     {
-        public class EnumBindingSourceExtension : MarkupExtension
-        {
-            private Type _enumType;
-            public Type EnumType
-            {
-                get { return this._enumType; }
-                set
-                {
-                    if (value != this._enumType)
-                    {
-                        if (null != value)
-                        {
-                            Type enumType = Nullable.GetUnderlyingType(value) ?? value;
-                            if (!enumType.IsEnum)
-                                throw new ArgumentException("Type must be for an Enum.");
-                        }
+        public bool isReadOnly = true;
 
-                        this._enumType = value;
-                    }
-                }
-            }
-
-            public EnumBindingSourceExtension() { }
-
-            public EnumBindingSourceExtension(Type enumType)
-            {
-                this.EnumType = enumType;
-            }
-
-            public override object ProvideValue(IServiceProvider serviceProvider)
-            {
-                if (null == this._enumType)
-                    throw new InvalidOperationException("The EnumType must be specified.");
-
-                Type actualEnumType = Nullable.GetUnderlyingType(this._enumType) ?? this._enumType;
-                Array enumValues = Enum.GetValues(actualEnumType);
-
-                if (actualEnumType == this._enumType)
-                    return enumValues;
-
-                Array tempArray = Array.CreateInstance(actualEnumType, enumValues.Length + 1);
-                enumValues.CopyTo(tempArray, 1);
-                return tempArray;
-            }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));            
-        }
+        
         public enum ContainerTypeEnum
         {
 
@@ -78,38 +31,84 @@ namespace ClientDelivery.Models
             [Description("Выполнена")] Done,
             [Description("Отменена")] Cancel
         }
-        public int Id 
-        { 
-            get;
-            set; 
-        }
-        public string ClientFIO 
-        { 
-            get; 
-            set; 
-        }
-        public ContainerTypeEnum ContainerType 
-        { 
-            get;
-            set; 
-        }
-        public string PlaceToPickUpOrder {
-            get;
-            set;
-        }
-        public DateTime TimeToPickUpOrder { 
-            get;
-            set;
-        }
-        public string PlaceToDeliveryOrder { 
-            get;
-            set;
-        }
-        public StatusOrderEnum StatusOrder { 
-            get;
-            set;
-        }
 
-
+        private string _clientFIO;
+        private ContainerTypeEnum _containerTypeEnum;
+        private string _placeToPickUpOrder;
+        private DateTime _timeToPickUpOrder;
+        private string _placeToDeliveryOrder;
+        private StatusOrderEnum _statusOrderEnum;
+        public int Id { get; set; }
+        public string ClientFIO
+        {
+            get { return _clientFIO; }
+            set 
+            { 
+                if (_clientFIO == value) 
+                    return;
+                _clientFIO = value;
+                OnPropertyChanged("CleintFIO");
+            }
+        }
+        public ContainerTypeEnum ContainerType
+        {
+            get { return _containerTypeEnum; }
+            set
+            {
+                if (_containerTypeEnum == value)
+                    return;
+                _containerTypeEnum = value;
+                OnPropertyChanged("ContainerType");
+            }
+        }
+        public string PlaceToPickUpOrder
+        {
+            get { return _placeToPickUpOrder; }
+            set 
+            { 
+                if (_placeToPickUpOrder == value)
+                    return ;
+                _placeToPickUpOrder = value;
+                OnPropertyChanged("PlaceToPickUpOrder");
+            }
+        }
+        public DateTime TimeToPickUpOrder
+        {
+            get { return _timeToPickUpOrder; }
+            set 
+            { 
+                if (_timeToPickUpOrder == value) 
+                    return ;
+                _timeToPickUpOrder = value;
+                OnPropertyChanged("TimeToPickUpOrder");
+            }
+        }
+        public string PlaceToDeliveryOrder
+        {
+            get { return _placeToDeliveryOrder; }
+            set 
+            { 
+                if (_placeToDeliveryOrder == value)
+                    return ;
+                _placeToDeliveryOrder = value;
+                OnPropertyChanged("PlaceToDeliveryOrder");
+            }
+        }
+        public StatusOrderEnum StatusOrder
+        {
+            get { return _statusOrderEnum; }
+            set 
+            { 
+                if (_statusOrderEnum == value)
+                    return;
+                _statusOrderEnum = value;
+                OnPropertyChanged("StatusOrder");
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
