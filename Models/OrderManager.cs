@@ -11,7 +11,7 @@ namespace ClientDelivery.Models
     {
         //public static ObservableCollection<Order> _DatabaseOrder = new ObservableCollection<Order>()
         //{
-        //    new Order() 
+        //    new Order()
         //    {
         //        Id = 1,
         //        ClientFIO = "Аржанов Андрей",
@@ -20,7 +20,7 @@ namespace ClientDelivery.Models
         //        TimeToPickUpOrder = new DateTime (2024, 10,20, 12,30,00),
         //        PlaceToDeliveryOrder = "г. Москва, ул. Лескова, д. 30, кв. 11 ",
         //        StatusOrder = Order.StatusOrderEnum.New
-        //    }, 
+        //    },
         //    new Order()
         //    {
         //        Id = 2,
@@ -49,7 +49,7 @@ namespace ClientDelivery.Models
         //}
         //public static void UpdateOrder(Order order)
         //{
-            
+
         //    _DatabaseOrder[order.Id] = order;
         //}
     }

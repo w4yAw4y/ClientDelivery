@@ -37,10 +37,7 @@
                       BorderBrush="Gray"
                       Margin="5,70,25,5"
                       Padding="0" FontSize="16"
-                      AutoGenerateColumns="False"
-            
-                  >
-
+                      AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly="{Binding Path=isReadOnly}" />
                 <DataGridTextColumn Binding="{Binding Path = ClientFIO}" x:Name="_clientFIO" Header="ФИО Клиента"/>

@@ -5,16 +5,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Markup;
-
+using ClientDelivery.Views;
 namespace ClientDelivery.Models
 {
     public class Order : INotifyPropertyChanged
     {
-        
         public bool isReadOnly = true;
 
-        
+
         public enum ContainerTypeEnum
         {
 
@@ -33,20 +33,30 @@ namespace ClientDelivery.Models
             [Description("Выполнена")] Done,
             [Description("Отменена")] Cancel
         }
-
+        private int _id;
         private string _clientFIO;
         private ContainerTypeEnum _containerTypeEnum;
         private string _placeToPickUpOrder;
         private DateTime _timeToPickUpOrder;
         private string _placeToDeliveryOrder;
         private StatusOrderEnum _statusOrderEnum;
-        public int Id { get; set; }
+        public int Id
+        {
+            get { return _id; }
+            set
+            {
+                if (_id == value)
+                    return;
+                _id = value;
+                OnPropertyChanged("Id");
+            }
+        }
         public string ClientFIO
         {
             get { return _clientFIO; }
-            set 
-            { 
-                if (_clientFIO == value) 
+            set
+            {
+                if (_clientFIO == value)
                     return;
                 _clientFIO = value;
                 OnPropertyChanged("CleintFIO");
@@ -66,10 +76,10 @@ namespace ClientDelivery.Models
         public string PlaceToPickUpOrder
         {
             get { return _placeToPickUpOrder; }
-            set 
-            { 
+            set
+            {
                 if (_placeToPickUpOrder == value)
-                    return ;
+                    return;
                 _placeToPickUpOrder = value;
                 OnPropertyChanged("PlaceToPickUpOrder");
             }
@@ -77,10 +87,10 @@ namespace ClientDelivery.Models
         public DateTime TimeToPickUpOrder
         {
             get { return _timeToPickUpOrder; }
-            set 
-            { 
-                if (_timeToPickUpOrder == value) 
-                    return ;
+            set
+            {
+                if (_timeToPickUpOrder == value)
+                    return;
                 _timeToPickUpOrder = value;
                 OnPropertyChanged("TimeToPickUpOrder");
             }
@@ -88,10 +98,10 @@ namespace ClientDelivery.Models
         public string PlaceToDeliveryOrder
         {
             get { return _placeToDeliveryOrder; }
-            set 
-            { 
+            set
+            {
                 if (_placeToDeliveryOrder == value)
-                    return ;
+                    return;
                 _placeToDeliveryOrder = value;
                 OnPropertyChanged("PlaceToDeliveryOrder");
             }
@@ -99,10 +109,12 @@ namespace ClientDelivery.Models
         public StatusOrderEnum StatusOrder
         {
             get { return _statusOrderEnum; }
-            set 
-            { 
+            set
+            {
                 if (_statusOrderEnum == value)
+                {
                     return;
+                }
                 _statusOrderEnum = value;
                 OnPropertyChanged("StatusOrder");
             }
