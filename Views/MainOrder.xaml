@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClientDelivery.MainWindow"
+﻿<Window x:Name="window" x:Class="ClientDelivery.MainWindow"        
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ClientDelivery"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1200">
-    <Grid x:Name="MainMenu" Background="White" >
+    
+    <Grid x:Name="MainMenu" Background="White" Loaded="MainMenu_Loaded" >
         <TextBox 
             Name="searchTextBox" 
             Height="30" Width="300" 
@@ -17,7 +18,7 @@
             TextAlignment="Left"
             TextWrapping="Wrap"
             Text="Введите текст" 
-            FontSize="18"
+            FontSize="16"
             >
         </TextBox>
         <Button
@@ -27,32 +28,30 @@
             Margin="10,25"
             VerticalAlignment="Top"
             HorizontalAlignment="Right" 
-            FontSize="18"            
+            FontSize="16"            
             >
             Добавить заявку
         </Button>
-        <Grid Background="Wheat" Grid.Row="1" Margin="0,70,100,0">
-            <ListView x:Name="orderListView"
+        <Grid Margin="0,70,80,0">
+            <DataGrid x:Name="orderDataGrid"
                       BorderBrush="Gray"
                       Margin="5,5,5,5"
-                      Padding="0"
+                      Padding="0" FontSize="16"
+                      AutoGenerateColumns="False"
                       >
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn x:Name="_id" Header="№"/>
-                        <GridViewColumn x:Name="_clientFIO" Header="ФИО Клиента"/>
-                        <GridViewColumn x:Name="_containerType" Header="Тип контейнера"/>
-                        <GridViewColumn x:Name="_placeToPickUpOrder" Header="Откуда забрать"/>
-                        <GridViewColumn x:Name="_timeToPickUp" Header="Во сколько забрать груз"/>
-                        <GridViewColumn x:Name="_placeToDeliveryOrder" Header="Куда доставить"/>                        
-                        <GridViewColumn x:Name="_statusOrder" Header="Статус"/>
-
-                    </GridView>
-                </ListView.View>
-            </ListView>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path = ClientFIO}" x:Name="_clientFIO" Header="ФИО Клиента"/>
+                    <DataGridComboBoxColumn  x:Name="_containerType" Header="Тип контейнера"/>
+                    <DataGridTextColumn Binding="{Binding Path= PlaceToPickUpOrder}" x:Name="_placeToPickUpOrder" Header="Откуда забрать"/>
+                    <DataGridTextColumn Binding="{Binding Path= TimeToPickUpOrder}" x:Name="_timeToPickUp" Header="Во сколько забрать груз"/>
+                    <DataGridTextColumn Binding="{Binding Path= PlaceToDeliveryOrder}" x:Name="_placeToDeliveryOrder" Header="Куда доставить"/>
+                    <DataGridComboBoxColumn   x:Name="_statusOrder" Header="Статус"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
 
         </Grid>
-        
+
     </Grid>
 </Window>
