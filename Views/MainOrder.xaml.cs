@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,9 +30,10 @@ namespace ClientDelivery
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
-        private void MainMenu_Loaded(object sender, RoutedEventArgs e) //Загрузка данных из файла
+        private void MainMenu_Loaded(object sender, RoutedEventArgs e) 
         {
             _orderDataList = new BindingList<Order>()
             {
@@ -57,6 +59,7 @@ namespace ClientDelivery
                 }
             };
             orderDataGrid.ItemsSource = _orderDataList;
+            //_statusOrder.ItemsSource = new Order.StatusOrderEnum { };
             _orderDataList.ListChanged += _orderDataList_ListChanged;
         }
 

@@ -1,12 +1,21 @@
-﻿<Window x:Name="window" x:Class="ClientDelivery.MainWindow"        
+﻿<Window x:Name="window" x:Class="ClientDelivery.MainWindow"    
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClientDelivery"
+        xmlns:local="clr-namespace:ClientDelivery.Models"
         mc:Ignorable="d"
+        
         Title="MainWindow" Height="700" Width="1200">
-    
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
     <Grid x:Name="MainMenu" Background="White" Loaded="MainMenu_Loaded" >
         <TextBox 
             Name="searchTextBox" 
@@ -14,7 +23,7 @@
             Margin="10,25" 
             VerticalAlignment="Top" 
             HorizontalAlignment="Left" 
-            Background="Aqua" 
+            Background="White" 
             TextAlignment="Left"
             TextWrapping="Wrap"
             Text="Введите текст" 
@@ -32,26 +41,22 @@
             >
             Добавить заявку
         </Button>
-        <Grid Margin="0,70,80,0">
-            <DataGrid x:Name="orderDataGrid"
+        <DataGrid x:Name="orderDataGrid"
                       BorderBrush="Gray"
-                      Margin="5,5,5,5"
+                      Margin="5,70,25,5"
                       Padding="0" FontSize="16"
                       AutoGenerateColumns="False"
                       >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding Path = ClientFIO}" x:Name="_clientFIO" Header="ФИО Клиента"/>
-                    <DataGridComboBoxColumn  x:Name="_containerType" Header="Тип контейнера"/>
-                    <DataGridTextColumn Binding="{Binding Path= PlaceToPickUpOrder}" x:Name="_placeToPickUpOrder" Header="Откуда забрать"/>
-                    <DataGridTextColumn Binding="{Binding Path= TimeToPickUpOrder}" x:Name="_timeToPickUp" Header="Во сколько забрать груз"/>
-                    <DataGridTextColumn Binding="{Binding Path= PlaceToDeliveryOrder}" x:Name="_placeToDeliveryOrder" Header="Куда доставить"/>
-                    <DataGridComboBoxColumn   x:Name="_statusOrder" Header="Статус"/>
-                </DataGrid.Columns>
-            </DataGrid>
-
-
-        </Grid>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path = Id}" x:Name="_id" Header="№" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path = ClientFIO}" x:Name="_clientFIO" Header="ФИО Клиента"/>
+                <DataGridComboBoxColumn  x:Name="_containerType" Header="Тип контейнера"/>
+                <DataGridTextColumn Binding="{Binding Path= PlaceToPickUpOrder}" x:Name="_placeToPickUpOrder" Header="Откуда забрать"/>
+                <DataGridTextColumn Binding="{Binding Path= TimeToPickUpOrder}" x:Name="_timeToPickUp" Header="Во сколько забрать груз"/>
+                <DataGridTextColumn Binding="{Binding Path= PlaceToDeliveryOrder}" x:Name="_placeToDeliveryOrder" Header="Куда доставить"/>
+                <DataGridComboBoxColumn x:Name="_statusOrder" Header="Статус"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>
