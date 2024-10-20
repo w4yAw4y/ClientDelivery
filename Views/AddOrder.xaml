@@ -4,19 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientDelivery.Views"
+        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="AddOrder" Height="250" Width="600">
+        Title="AddOrder" Height="400" Width="750">
     <Grid>
-        <Button x:Name="AddOrderButton" Content="Добавить" HorizontalAlignment="Center" Margin="0,206,0,0" VerticalAlignment="Top" Height="19" Width="96"/>
+        <Button x:Name="AddOrderButton" Content="Добавить" HorizontalAlignment="Center" Margin="0,332,0,0" Width="96" Height="19" VerticalAlignment="Top"/>
         <Label x:Name="HeadLabel" Content="Добавление заказа" 
-               HorizontalAlignment="Center" VerticalAlignment="Top" 
-               Width="120" Height="25"/>
-        <Label x:Name="NameLabel" Content="ФИО:" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Width="170" BorderBrush="Black" BorderThickness="0.5"/>
-        <Label x:Name="ContainerTypeLabel" Content="Тип контейнера:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="170" BorderBrush="Black" BorderThickness="0.5"/>
-        <Label x:Name="PlaceToPickUpOrder" Content="Адрес приёма груза:" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="170" BorderBrush="Black" BorderThickness="0.5"/>
-        <Label x:Name="TimeToPickUpOrder" Content="Дата и время приёма груза:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="170" BorderBrush="Black" BorderThickness="0.5"/>
-        <Label x:Name="PlaceToDeliveryOrderLabel" Content="Адрес доставки груза:" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="170" BorderBrush="Black" BorderThickness="0.5"/>
-
+               HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Height="25" />
+        <Label x:Name="NameLabel" Content="ФИО:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="211" BorderBrush="Black" BorderThickness="0.5" Height="36" 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+        <Label x:Name="ContainerTypeLabel" Content="Тип контейнера:" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="211" 
+               BorderBrush="Black" BorderThickness="0.5" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+        <Label x:Name="PlaceToPickUpOrder" Content="Адрес приёма груза:" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="211" 
+               BorderBrush="Black" BorderThickness="0.5" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+        <Label x:Name="TimeToPickUpOrder" Content="Дата и время приёма груза:" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Width="211"
+               BorderBrush="Black" BorderThickness="0.5" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+        <Label x:Name="PlaceToDeliveryOrderLabel" Content="Адрес доставки груза:" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Width="211" 
+               BorderBrush="Black" BorderThickness="0.5" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" />
+        <TextBox x:Name="FIOTextBox" HorizontalAlignment="Left" Margin="240,33,0,0" TextWrapping="Wrap" Text="TextBox" 
+                 VerticalAlignment="Top" Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox x:Name="PlacetoPickUpOrderTextBox" HorizontalAlignment="Left" Margin="240,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" 
+                 Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
+        <ComboBox x:Name="ContainerTypeComboBox" HorizontalAlignment="Left" Margin="240,74,0,0" VerticalAlignment="Top" 
+                  Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
+        <xctk:DateTimePicker  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="240,197,0,0" Height="79" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="15"/>
+        <TextBox x:Name="PlacetoDeliveryOrderTextBox" HorizontalAlignment="Left" Margin="240,156,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" 
+                 Width="492" Height="36" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15"/>
 
     </Grid>
 </Window>
