@@ -1,4 +1,5 @@
 ﻿using ClientDelivery.Models;
+using ClientDelivery.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,9 @@ namespace ClientDelivery
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly string PATH = $"{Environment.CurrentDirectory}\\orderDataList.json";
         private BindingList<Order> _orderDataList;
+        private FileIOService _fileIOService;
 
         public MainWindow()
         {
@@ -35,6 +38,18 @@ namespace ClientDelivery
 
         private void MainMenu_Loaded(object sender, RoutedEventArgs e) 
         {
+            _fileIOService = new FileIOService(PATH);
+            
+            orderDataGrid.ItemsSource = _orderDataList;
+            try
+            {
+                _orderDataList = _fileIOService.LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
             _orderDataList = new BindingList<Order>()
             {
                 new Order()
@@ -58,35 +73,23 @@ namespace ClientDelivery
                     StatusOrder = Order.StatusOrderEnum.Done
                 }
             };
-            orderDataGrid.ItemsSource = _orderDataList;
+
             _statusOrder.ItemsSource = Enum.GetValues(typeof(Order.StatusOrderEnum));
             _containerType.ItemsSource = Enum.GetValues(typeof(Order.ContainerTypeEnum));
 
-            _orderDataList.ListChanged += _orderDataList_ListChanged;
+            //_orderDataList.ListChanged += _orderDataList_ListChanged;
         }
 
         private void _orderDataList_ListChanged(object sender, ListChangedEventArgs e)
         {
-            switch (e.ListChangedType)
+            if (e.ListChangedType == ListChangedType.ItemChanged || e.ListChangedType == ListChangedType.ItemAdded || e.ListChangedType == ListChangedType.ItemDeleted)
             {
-                case ListChangedType.Reset:
-                    break;
-                case ListChangedType.ItemAdded:
-                    break;
-                case ListChangedType.ItemDeleted:
-                    break;
-                case ListChangedType.ItemMoved:
-                    break;
-                case ListChangedType.ItemChanged:
-                    break;
-                case ListChangedType.PropertyDescriptorAdded:
-                    break;
-                case ListChangedType.PropertyDescriptorDeleted:
-                    break;
-                case ListChangedType.PropertyDescriptorChanged:
-                    break;
-                default:
-                    break;
+                try {_fileIOService.SaveData(sender); }  
+                catch(Exception ex) 
+                {
+                    MessageBox.Show(ex.Message);
+                    this.Close();
+                }
             }
         }
     }

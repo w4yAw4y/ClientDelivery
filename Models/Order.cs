@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ClientDelivery.Models
 {
     public class Order : INotifyPropertyChanged
     {
+        
         public bool isReadOnly = true;
 
         

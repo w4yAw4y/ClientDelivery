@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderManager.cs" />
+    <Compile Include="Services\FileIOService.cs" />
     <Compile Include="Views\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
     </Compile>
@@ -122,8 +123,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
